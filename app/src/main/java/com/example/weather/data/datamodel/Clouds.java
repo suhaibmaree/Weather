@@ -1,4 +1,4 @@
-package com.example.weather.data;
+package com.example.weather.data.datamodel;
 
 import android.os.Parcel;
 import android.os.Parcelable;

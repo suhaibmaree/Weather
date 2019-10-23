@@ -1,4 +1,4 @@
-package com.example.weather.data;
+package com.example.weather.data.datamodel;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -67,7 +67,7 @@ public class WeatherModel implements Parcelable {
 
     protected WeatherModel(Parcel in) {
         this.coord = ((Coord) in.readValue((Coord.class.getClassLoader())));
-        in.readList(this.weather, (com.example.weather.data.Weather.class.getClassLoader()));
+        in.readList(this.weather, (Weather.class.getClassLoader()));
         this.base = ((String) in.readValue((String.class.getClassLoader())));
         this.main = ((Main) in.readValue((Main.class.getClassLoader())));
         this.visibility = ((Integer) in.readValue((Integer.class.getClassLoader())));
