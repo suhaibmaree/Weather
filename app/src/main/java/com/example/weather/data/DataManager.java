@@ -8,11 +8,9 @@ import io.reactivex.Observable;
 
 public class DataManager {
 
-    private static DataManager mDataManager;
+    private static DataManager mDataManager = new DataManager();
 
     public static DataManager getInstance(){
-        if (mDataManager == null)
-            mDataManager = new DataManager();
         return mDataManager;
     }
 

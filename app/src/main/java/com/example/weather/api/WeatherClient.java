@@ -6,14 +6,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class WeatherClient {
 
-    public static final String baseUrl = "https://api.openweathermap.org/data/2.5";
     private static Retrofit mRtrofit;
 
     public static Retrofit getWeather() {
 
         if (mRtrofit == null) {
             mRtrofit = new Retrofit.Builder()
-                    .baseUrl(baseUrl)
+                    .baseUrl(Constants.BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build();

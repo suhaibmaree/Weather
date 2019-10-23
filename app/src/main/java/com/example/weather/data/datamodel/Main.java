@@ -23,7 +23,7 @@ public class Main implements Parcelable
     private Double tempMin;
     @SerializedName("temp_max")
     @Expose
-    private Integer tempMax;
+    private Double tempMax;
     public final static Parcelable.Creator<Main> CREATOR = new Creator<Main>() {
 
 
@@ -46,7 +46,7 @@ public class Main implements Parcelable
         this.pressure = ((Integer) in.readValue((Integer.class.getClassLoader())));
         this.humidity = ((Integer) in.readValue((Integer.class.getClassLoader())));
         this.tempMin = ((Double) in.readValue((Double.class.getClassLoader())));
-        this.tempMax = ((Integer) in.readValue((Integer.class.getClassLoader())));
+        this.tempMax = ((Double) in.readValue((Integer.class.getClassLoader())));
     }
 
     public Main() {
@@ -84,11 +84,11 @@ public class Main implements Parcelable
         this.tempMin = tempMin;
     }
 
-    public Integer getTempMax() {
+    public Double getTempMax() {
         return tempMax;
     }
 
-    public void setTempMax(Integer tempMax) {
+    public void setTempMax(Double tempMax) {
         this.tempMax = tempMax;
     }
 

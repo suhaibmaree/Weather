@@ -6,6 +6,6 @@ import io.reactivex.Observable;
 import retrofit2.http.GET;
 
 public interface WeatherService {
-    @GET("/weather?id=284893&units=metric&appid=836855985b1cf9e113bdbe8a2c6a05ab")
+    @GET("weather?id=284893&units=metric&appid=836855985b1cf9e113bdbe8a2c6a05ab")
     Observable<WeatherModel> getWeather();
 }

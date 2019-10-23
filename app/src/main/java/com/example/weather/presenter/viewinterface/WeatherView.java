@@ -5,5 +5,5 @@ import com.example.weather.data.datamodel.WeatherModel;
 
 public interface WeatherView extends MvpView {
 
-    public void displayNotification(WeatherModel model);
+    void displayText(WeatherModel model);
 }

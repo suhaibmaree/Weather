@@ -16,7 +16,6 @@ public class Coord implements Parcelable {
     private Double lat;
     public final static Parcelable.Creator<Coord> CREATOR = new Creator<Coord>() {
 
-
         @SuppressWarnings({
                 "unchecked"
         })
