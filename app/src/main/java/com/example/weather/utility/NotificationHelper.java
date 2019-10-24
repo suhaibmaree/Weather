@@ -20,12 +20,12 @@ public class NotificationHelper extends ContextWrapper {
         super(base);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-            createChanel();
+            createChannel();
     }
 
 
     @TargetApi(Build.VERSION_CODES.O)
-    private void createChanel() {
+    private void createChannel() {
         NotificationChannel channel = new NotificationChannel(
                 chanelID,
                 chanelName,
@@ -46,7 +46,7 @@ public class NotificationHelper extends ContextWrapper {
     public NotificationCompat.Builder getChanelNotification(String s){
         return new NotificationCompat.Builder(getApplicationContext(), chanelID)
                 .setContentTitle("Alarm !")
-                .setContentText("Temperature is: "+ s)
+                .setContentText("Temperature is: "+ s+ " °")
                 .setSmallIcon(R.drawable.ic_notifications);
     }
 

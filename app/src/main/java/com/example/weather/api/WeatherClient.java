@@ -6,19 +6,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class WeatherClient {
 
-    private static Retrofit mRtrofit;
+    private static Retrofit mRetrofit;
 
     public static Retrofit getWeather() {
 
-        if (mRtrofit == null) {
-            mRtrofit = new Retrofit.Builder()
+        if (mRetrofit == null) {
+            mRetrofit = new Retrofit.Builder()
                     .baseUrl(Constants.BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build();
         }
 
-        return mRtrofit;
+        return mRetrofit;
     }
 
 }

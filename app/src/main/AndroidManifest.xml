@@ -3,7 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.weather">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+
+
 
     <application
         android:allowBackup="true"
@@ -21,13 +27,23 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".Service.MyServeice"
+        <receiver android:name=".receiver.AlarmReceiver" />
+        <receiver
+            android:name=".receiver.BootDeviceReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.example.AN_INTENT"/>
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".Service.RunAfterBootWeatherService"
             android:enabled="true"
             android:exported="true">
 
         </service>
-
-        <receiver android:name=".receiver.AlarmReceiver"/>
     </application>
 
 </manifest>

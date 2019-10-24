@@ -21,6 +21,7 @@ public class WeatherPresenter extends BasePresenter<WeatherView> {
 
         mDataManager.getWeather()
                 .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<WeatherModel>() {
                     @Override
                     public void onSubscribe(Disposable d) {
@@ -36,7 +37,7 @@ public class WeatherPresenter extends BasePresenter<WeatherView> {
                     @Override
                     public void onError(Throwable e) {
 
-                        e.printStackTrace();
+                        Log.d(TAG, e.getMessage());
                     }
 
                     @Override
