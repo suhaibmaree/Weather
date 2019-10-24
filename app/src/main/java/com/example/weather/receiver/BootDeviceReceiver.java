@@ -9,6 +9,7 @@ import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.weather.R;
 import com.example.weather.Service.RunAfterBootWeatherService;
 
 import static com.example.weather.api.Constants.ANDROID_ACTION;
@@ -48,13 +49,14 @@ public class BootDeviceReceiver extends BroadcastReceiver {
         }
 
         long startTime = System.currentTimeMillis();
-        long intervalTime = 60000;
+        long intervalTime = 60 * 1000;
 
-        String message = "Start Service use repeat alarm";
+        String message = context.getString(R.string.start_service_message);
 
         Toast.makeText(context, message, Toast.LENGTH_LONG).show();
         Log.d(TAG, message);
 
+        assert alarmManager != null;
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, startTime, intervalTime, pendingIntent);
 
     }

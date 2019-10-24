@@ -13,7 +13,7 @@ public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        double mTemp = intent.getDoubleExtra("temp" , 0);
+        double mTemp = intent.getDoubleExtra("temp", 0);
 
         NotificationHelper notificationHelper = new NotificationHelper(context);
         NotificationCompat.Builder builder = notificationHelper.getChanelNotification(String.valueOf(mTemp));

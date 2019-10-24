@@ -1,6 +1,7 @@
 package com.example.weather.Service;
 
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
@@ -8,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.example.weather.R;
 import com.example.weather.data.DataManager;
 import com.example.weather.data.datamodel.WeatherModel;
 import com.example.weather.receiver.AlarmReceiver;
@@ -26,21 +28,21 @@ public class RunAfterBootWeatherService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        throw new UnsupportedOperationException(getString(R.string.implementation_message));
     }
 
 
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d(TAG, "Run after boot service onCreate() method");
+        Log.d(TAG, getString(R.string.run_after_boot_message));
 
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        String message = "Run after boot service onStartCommand() method";
+        String message = getString(R.string.run_after_bootservice_message);
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
         Log.d(TAG, message);
 

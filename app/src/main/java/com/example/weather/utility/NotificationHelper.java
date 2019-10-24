@@ -6,14 +6,15 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.os.Build;
+
 import androidx.core.app.NotificationCompat;
 
 import com.example.weather.R;
 
 public class NotificationHelper extends ContextWrapper {
 
-    public static final String chanelID = "chanel ID";
-    public static final String chanelName = "chanel Name";
+    private static final String CHANEL_ID = "chanel ID";
+    private static final String CHANEL_NAME = "chanel Name";
     private NotificationManager mManager;
 
     public NotificationHelper(Context base) {
@@ -27,8 +28,8 @@ public class NotificationHelper extends ContextWrapper {
     @TargetApi(Build.VERSION_CODES.O)
     private void createChannel() {
         NotificationChannel channel = new NotificationChannel(
-                chanelID,
-                chanelName,
+                CHANEL_ID,
+                CHANEL_NAME,
                 NotificationManager.IMPORTANCE_HIGH
         );
 
@@ -43,10 +44,10 @@ public class NotificationHelper extends ContextWrapper {
         return mManager;
     }
 
-    public NotificationCompat.Builder getChanelNotification(String s){
-        return new NotificationCompat.Builder(getApplicationContext(), chanelID)
-                .setContentTitle("Alarm !")
-                .setContentText("Temperature is: "+ s+ " °")
+    public NotificationCompat.Builder getChanelNotification(String s) {
+        return new NotificationCompat.Builder(getApplicationContext(), CHANEL_ID)
+                .setContentTitle(getString(R.string.alarm))
+                .setContentText(getString(R.string.tempreture) + s + " °")
                 .setSmallIcon(R.drawable.ic_notifications);
     }
 

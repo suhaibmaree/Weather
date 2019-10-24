@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Weather</string>
+    <string name="start_service_message">Start Service use repeat alarm</string>
+    <string name="implementation_message">Not yet implemented</string>
+    <string name="run_after_boot_message">Run after boot service onCreate() method</string>
+    <string name="run_after_bootservice_message">Run after boot service onStartCommand() method</string>
+    <string name="alarm">Alarm !</string>
+    <string name="tempreture">Temperature is:</string>
 </resources>

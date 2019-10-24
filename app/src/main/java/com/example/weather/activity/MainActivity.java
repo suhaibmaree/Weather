@@ -20,7 +20,7 @@ import static com.example.weather.api.Constants.ANDROID_ACTION;
 
 public class MainActivity extends AppCompatActivity implements WeatherView {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = MainActivity.class.getSimpleName();
     private TextView textView;
     private WeatherPresenter presenter = new WeatherPresenter();
     private BootDeviceReceiver receiver = new BootDeviceReceiver();
@@ -53,12 +53,13 @@ public class MainActivity extends AppCompatActivity implements WeatherView {
 
         Log.d(TAG, model.getMain().getTemp().toString());
         Toast.makeText(MainActivity.this, model.getMain().getTemp().toString(), Toast.LENGTH_LONG).show();
-        textView.setText(String.valueOf(model.getMain().getTemp()) + "°");
+        textView.setText(model.getMain().getTemp() + "°");
 
     }
 
     @Override
     protected void onDestroy() {
+        presenter.detachView();
         super.onDestroy();
     }
 }

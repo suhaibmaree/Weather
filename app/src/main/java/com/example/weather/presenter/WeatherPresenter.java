@@ -30,7 +30,7 @@ public class WeatherPresenter extends BasePresenter<WeatherView> {
 
                     @Override
                     public void onNext(WeatherModel model) {
-                        Log.d(TAG , model.getMain().getTemp().toString());
+                        Log.d(TAG, model.getMain().getTemp().toString());
                         mMvpView.displayText(model);
                     }
 
